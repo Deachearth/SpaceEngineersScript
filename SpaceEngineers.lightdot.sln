@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__SulutionItems", "__SulutionItems", "{2C328D5C-77E3-4DB1-9245-8E7716DD0D56}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Script", "Script\Script.csproj", "{F5DEFED5-795A-406C-9476-C933FD3225C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AMD64 = Debug|AMD64
+		Release|AMD64 = Release|AMD64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5DEFED5-795A-406C-9476-C933FD3225C3}.Debug|AMD64.ActiveCfg = Debug|AMD64
+		{F5DEFED5-795A-406C-9476-C933FD3225C3}.Debug|AMD64.Build.0 = Debug|AMD64
+		{F5DEFED5-795A-406C-9476-C933FD3225C3}.Release|AMD64.ActiveCfg = Release|AMD64
+		{F5DEFED5-795A-406C-9476-C933FD3225C3}.Release|AMD64.Build.0 = Release|AMD64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAB8CD49-0700-4374-A937-15E82674E04B}
+	EndGlobalSection
+EndGlobal

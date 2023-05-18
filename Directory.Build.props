@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<Title>刘达成</Title>
+		<TargetFramework>net6.0</TargetFramework>
+		<!--LangVersion>1 2 3 4 5 6 7 7.1 7.2 7.3 8.0 9.0 10.0 11.0 default latest preview</LangVersion-->
+		<LangVersion>preview</LangVersion>
+		<RootNamespace>SpaceEngineers</RootNamespace>
+		<CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<LibFolder>$(SolutionDir)\lib\</LibFolder>
+		<OutputPath>$(SolutionDir)\Output\$(Configuration)$(Platform)\</OutputPath>
+		<Platforms>AMD64</Platforms>
+		<SignAssembly>true</SignAssembly>
+		<NoWarn>1701;1702;CA1033</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!--SEBinPath>$(registry:HKEY_CURRENT_USER\Software\Malware\MDK@SEBinPath)</SEBinPath-->
+		<SEBinPath>E:\SteamApps\steamapps\common\SpaceEngineers\Bin64\</SEBinPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="Sandbox.Common">
+			<HintPath>$(SEBinPath)\Sandbox.Common.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="Sandbox.Game">
+			<HintPath>$(SEBinPath)\Sandbox.Game.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="SpaceEngineers.Game">
+			<HintPath>$(SEBinPath)\SpaceEngineers.Game.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="SpaceEngineers.ObjectBuilders">
+			<HintPath>$(SEBinPath)\SpaceEngineers.ObjectBuilders.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="VRage">
+			<HintPath>$(SEBinPath)\VRage.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="VRage.Game">
+			<HintPath>$(SEBinPath)\VRage.Game.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="VRage.Library">
+			<HintPath>$(SEBinPath)\VRage.Library.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+		<Reference Include="VRage.Math">
+			<HintPath>$(SEBinPath)\VRage.Math.dll</HintPath>
+			<Private>True</Private>
+		</Reference>
+	</ItemGroup>
+
+</Project>
