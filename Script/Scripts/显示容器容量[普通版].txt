@@ -1,0 +1,35 @@
+
+uint Update = 0;
+
+public void Main( string args )
+{
+    MyFixedPoint CurrentMass = 0;
+    MyFixedPoint CurrentVolume = 0;
+    MyFixedPoint MaxVolume = 0;
+
+    var cargos = GetCollectToList<IMyCargoContainer>( this.GridTerminalSystem.GetBlocksOfType ).Where( x => x.IsWorking ).ToList();
+    foreach ( var value in cargos )
+    {
+        if ( !value.HasInventory ) continue;
+        for ( var i = 0; i < value.InventoryCount; i++ )
+        {
+            var inv = value.GetInventory( i );
+            CurrentMass += inv.CurrentMass;
+            CurrentVolume += inv.CurrentVolume;
+            MaxVolume += inv.MaxVolume;
+        }
+    }
+
+    this.Echo( $"={Update++}=" );
+    this.Echo( $"容器数量：{cargos.Count}个" );
+    this.Echo( $"当前质量：{(double) CurrentMass:F3}kg" );
+    this.Echo( $"当前容量：{CurrentVolume * 1000}L" );
+    this.Echo( $"最大容量：{MaxVolume * 1000}L [[{1D * CurrentVolume.RawValue / MaxVolume.RawValue:P}]]" );
+}
+
+public Program()
+{
+    this.Runtime.UpdateFrequency = UpdateFrequency.Update100;
+}
+
+static List<T> GetCollectToList<T>( Action<List<T>, Func<T, bool>> action, Func<T, bool> collect = null ) { var list = new List<T>(); action( list, collect ); return list; }
